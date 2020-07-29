@@ -31,6 +31,8 @@ namespace SalesWebMvc
 
             services.AddScoped<SeendingService>();
             services.AddScoped<SellerService>();
+            services.AddScoped<DepartmentService>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<SalesWebMvcContext>(options =>
