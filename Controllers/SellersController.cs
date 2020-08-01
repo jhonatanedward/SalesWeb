@@ -29,7 +29,7 @@ namespace SalesWebMvc.Controllers
         public async Task<IActionResult> Create()
         {
             var departments = await _departmentService.FindAllAsync();
-            var viewModel = new SallerFormViewModel { Departments = departments };
+            var viewModel = new SalerFormViewModel { Departments = departments };
             return View(viewModel);
         }
         [HttpPost]
@@ -39,7 +39,7 @@ namespace SalesWebMvc.Controllers
             if (!ModelState.IsValid)
             {
                 var departments = await _departmentService.FindAllAsync();
-                var viewModel = new SallerFormViewModel { Seller = seller, Departments = departments };
+                var viewModel = new SalerFormViewModel { Seller = seller, Departments = departments };
                 return View(viewModel);
             }
             await _sellerService.InsertAsync(seller);
@@ -107,7 +107,7 @@ namespace SalesWebMvc.Controllers
             }
             List<Department> departments = await _departmentService.FindAllAsync();
 
-            SallerFormViewModel viewModel = new SallerFormViewModel { Seller = obj, Departments = departments };
+            SalerFormViewModel viewModel = new SalerFormViewModel { Seller = obj, Departments = departments };
             return View(viewModel);
         }
 
@@ -118,7 +118,7 @@ namespace SalesWebMvc.Controllers
             if (!ModelState.IsValid)
             {
                 var departments = await _departmentService.FindAllAsync();
-                var viewModel = new SallerFormViewModel { Seller = seller, Departments = departments };
+                var viewModel = new SalerFormViewModel { Seller = seller, Departments = departments };
                 return View(seller);
             }
             if (id != seller.Id)

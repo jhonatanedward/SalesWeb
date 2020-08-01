@@ -2,7 +2,7 @@
 
 namespace SalesWebMvc.Models.ViewModels
 {
-    public class SallerFormViewModel
+    public class SalerFormViewModel
     {
         public Seller Seller { get; set; }
         public ICollection<Department> Departments { get; set; }
